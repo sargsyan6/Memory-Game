@@ -1,11 +1,14 @@
 import React from "react";
 
+
+
 function Card({ card, handleCard, flipped, disabled }) {
-  const handleClick = () => {
+
+  function handleClick() {
     if (!disabled) {
       handleCard(card);
     }
-  };
+  }
 
   return (
     <div className="card">

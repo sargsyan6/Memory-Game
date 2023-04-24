@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./Card";
-import {cardImages} from "./Animals images"
-
-
+import { cardImages } from "./Animals images";
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -11,7 +9,6 @@ function App() {
   const [second, setSecond] = useState(null);
   const [disabled, setDisabled] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
-  
 
   useEffect(() => {
     if (first && second) {
@@ -52,7 +49,7 @@ function App() {
   };
 
   const handleCard = (card) => {
-    first ? setSecond(card) : setFirst(card);
+    first && card.id !== first.id ? setSecond(card) : setFirst(card);
   };
 
   return (
@@ -65,6 +62,7 @@ function App() {
             card={item}
             flipped={item === first || item === second || item.matched}
             disabled={disabled}
+            setDisabled={setDisabled}
           />
         );
       })}

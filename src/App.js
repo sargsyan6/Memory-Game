@@ -68,14 +68,18 @@ function App() {
       })}
       {isStarted && (
         <div className="new-game">
-          <button
-            onClick={() => {
-              shuffleCards();
-              setIsStarted(false);
-            }}
-          >
-            New Game
-          </button>
+          {cards.filter((it) => it.matched === true).length ===
+            cards.length && <div className="congratulation ">Congratulation  ! You Win</div>}
+          <div>
+            <button
+              onClick={() => {
+                shuffleCards();
+                setIsStarted(false);
+              }}
+            >
+              New Game
+            </button>
+          </div>
         </div>
       )}
     </div>

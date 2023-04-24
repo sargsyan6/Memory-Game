@@ -45,10 +45,16 @@ img {
 
 .new-game {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   width: 150px;
   height: 200px;
+}
+.congratulation{
+  text-align: center;
+  color: green;
+  font-size: 25px;
 }
 
 .new-game button {
